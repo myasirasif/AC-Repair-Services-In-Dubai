@@ -46,6 +46,7 @@ export type Service = {
   turnaround: string;
   icon: "wrench" | "sparkles" | "gauge" | "wind" | "air-vent" | "calendar";
   problem: string;
+  image: { src: string; alt: string };
 };
 
 export const services: Service[] = [
@@ -67,6 +68,7 @@ export const services: Service[] = [
     turnaround: "Same-day in most cases",
     icon: "wrench",
     problem: "Not Cooling",
+    image: { src: "/images/technician-repairing-ac-unit.jpg", alt: "Technician testing wiring inside an air conditioning unit during a repair" },
   },
   {
     id: "ac-servicing",
@@ -85,6 +87,7 @@ export const services: Service[] = [
     turnaround: "About 1 to 2 hours per unit",
     icon: "sparkles",
     problem: "AC Servicing",
+    image: { src: "/images/condenser-coil-cleaning.jpg", alt: "Technician pressure-washing AC condenser coils during a service" },
   },
   {
     id: "ac-gas-refill",
@@ -102,6 +105,7 @@ export const services: Service[] = [
     turnaround: "Same visit where parts allow",
     icon: "gauge",
     problem: "Gas Refill",
+    image: { src: "/images/gas-pressure-gauges-refill.jpg", alt: "Technician connecting refrigerant pressure gauges to an AC system" },
   },
   {
     id: "ac-duct-cleaning",
@@ -119,6 +123,7 @@ export const services: Service[] = [
     turnaround: "Typically completed in one visit",
     icon: "wind",
     problem: "Bad Smell",
+    image: { src: "/images/duct-insulation-work.jpg", alt: "Technician working on insulated refrigerant and duct lines inside an AC unit" },
   },
   {
     id: "ac-installation",
@@ -137,6 +142,7 @@ export const services: Service[] = [
     turnaround: "Scheduled at a time that suits you",
     icon: "air-vent",
     problem: "AC Installation",
+    image: { src: "/images/outdoor-split-unit-installation.jpg", alt: "Technician tightening refrigerant pipe fittings with wrenches during an AC installation" },
   },
   {
     id: "ac-maintenance-contracts",
@@ -154,6 +160,7 @@ export const services: Service[] = [
     turnaround: "Plan agreed upfront",
     icon: "calendar",
     problem: "Maintenance Contract",
+    image: { src: "/images/rooftop-ac-units-maintenance.jpg", alt: "Rooftop packaged AC units on a commercial building" },
   },
 ];
 

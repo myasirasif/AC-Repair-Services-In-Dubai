@@ -7,7 +7,7 @@ import { Steps } from "@/components/sections/Steps";
 import { RatingBlock } from "@/components/sections/RatingBlock";
 import { Coverage } from "@/components/sections/Coverage";
 import { CtaBand } from "@/components/sections/CtaBand";
-import { Placeholder } from "@/components/ui/Placeholder";
+import { Photo } from "@/components/ui/Photo";
 import { Reveal } from "@/components/ui/Reveal";
 import { WhatsAppIcon, serviceIcons } from "@/components/icons";
 import { reasons, services, siteConfig } from "@/lib/site-config";
@@ -20,10 +20,10 @@ export const metadata: Metadata = {
 };
 
 const gallery = [
-  "Technician cleaning split AC coil",
-  "Outdoor condenser service on a Dubai rooftop",
-  "Duct cleaning before and after",
-  "Gas pressure check with gauges",
+  { src: "/images/technician-inside-ac-unit.jpg", alt: "Technician working inside a large air conditioning unit" },
+  { src: "/images/outdoor-split-unit-installation.jpg", alt: "Technician tightening AC refrigerant pipe fittings with wrenches" },
+  { src: "/images/condenser-coil-cleaning.jpg", alt: "Technician pressure-washing AC condenser coils" },
+  { src: "/images/gas-pressure-gauges-refill.jpg", alt: "Refrigerant pressure gauges connected during an AC gas check" },
 ];
 
 export default function HomePage() {
@@ -78,7 +78,7 @@ export default function HomePage() {
           </div>
           <div className="hidden md:col-span-5 md:block">
             <div className="relative">
-              <Placeholder label="Technician repairing a split AC unit" className="aspect-[4/5] w-full shadow-2xl" />
+              <Photo src="/images/technician-checking-ac-pressure.jpg" alt="AC technician checking refrigerant pressure on an outdoor unit" className="aspect-[4/5] w-full shadow-2xl" sizes="(min-width: 768px) 40vw, 1px" priority />
               <div className="absolute -left-8 bottom-10 rounded-2xl bg-white p-4 text-ink shadow-card">
                 <p className="text-xs font-semibold uppercase tracking-widest text-slate">Symptoms we fix</p>
                 <p className="mt-1 font-display font-bold">Not cooling · Leaking · Noise · Smell</p>
@@ -136,7 +136,7 @@ export default function HomePage() {
       <section aria-labelledby="why-title" className="py-16 md:py-24">
         <div className="container-x grid gap-10 md:grid-cols-12 md:items-center">
           <Reveal className="md:col-span-5">
-            <Placeholder label="Technician at work in a Dubai apartment" className="aspect-[4/5] w-full" />
+            <Photo src="/images/technician-repairing-ac-unit.jpg" alt="Technician testing the wiring of an air conditioning unit" className="aspect-[4/5] w-full" />
           </Reveal>
           <div className="md:col-span-6 md:col-start-7">
             <p className="eyebrow">Why choose us</p>
@@ -163,10 +163,12 @@ export default function HomePage() {
           <h2 id="work-title" className="h2 mt-2">AC servicing in Dubai homes and offices</h2>
           <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-4 md:grid-rows-2">
             {gallery.map((g, i) => (
-              <Placeholder
-                key={g}
-                label={g}
-                className={i === 0 ? "col-span-2 aspect-square md:row-span-2 md:aspect-auto" : i === 3 ? "col-span-2 aspect-[2/1]" : "aspect-square"}
+              <Photo
+                key={g.src}
+                src={g.src}
+                alt={g.alt}
+                sizes={i === 0 ? "(min-width: 768px) 50vw, 100vw" : "(min-width: 768px) 25vw, 50vw"}
+                className={i === 0 ? "col-span-2 aspect-square md:row-span-2" : i === 3 ? "col-span-2 aspect-[2/1]" : "aspect-square"}
               />
             ))}
           </div>

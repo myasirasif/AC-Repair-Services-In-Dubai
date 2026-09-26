@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowRight, Check, Timer } from "lucide-react";
 import { PageHero } from "@/components/sections/PageHero";
 import { CtaBand } from "@/components/sections/CtaBand";
-import { Placeholder } from "@/components/ui/Placeholder";
+import { Photo } from "@/components/ui/Photo";
 import { Reveal } from "@/components/ui/Reveal";
 import { serviceIcons } from "@/components/icons";
 import { services } from "@/lib/site-config";
@@ -44,7 +44,7 @@ export default function ServicesPage() {
             <section key={s.id} id={s.id} aria-labelledby={`${s.id}-title`} className="scroll-mt-28 py-10 md:py-14">
               <div className="container-x grid gap-8 md:grid-cols-12 md:items-center md:gap-12">
                 <Reveal className={`md:col-span-5 ${flip ? "md:order-2 md:col-start-8" : ""}`}>
-                  <Placeholder label={`${s.title} in progress`} className="aspect-[5/4] w-full" />
+                  <Photo src={s.image.src} alt={s.image.alt} className="aspect-[5/4] w-full" />
                 </Reveal>
                 <div className={`md:col-span-6 ${flip ? "md:order-1 md:col-start-1" : "md:col-start-7"}`}>
                   <span className="grid h-14 w-14 place-items-center rounded-full bg-brand-blue/10 text-brand-blue">

@@ -6,7 +6,7 @@ import { nav, services, siteConfig } from "@/lib/site-config";
 
 export function Footer() {
   return (
-    <footer className="bg-ink pb-24 pt-16 text-white/75 md:pb-10">
+    <footer className="bg-ink pb-28 pt-16 text-white/75 md:pb-28">
       <div className="container-x grid gap-10 md:grid-cols-12">
         <div className="md:col-span-4">
           <Logo tone="light" />
@@ -69,8 +69,19 @@ export function Footer() {
           </ul>
         </address>
       </div>
-      <div className="container-x mt-12 border-t border-white/10 pt-6 text-xs text-white/50">
-        © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
+      {/* pb-28 on the footer leaves room below this row for the fixed WhatsApp button / mobile bar */}
+      <div className="container-x mt-12 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs text-white/50 md:flex-row md:items-start md:justify-between md:pr-24">
+        <p>© {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
+        <p className="shrink-0 text-sm text-white/70">
+          Design and developed with{" "}
+          <span className="text-action" aria-label="love">
+            ♥
+          </span>{" "}
+          by{" "}
+          <a href="https://yasirafridi.dev/" target="_blank" rel="noopener" className="font-semibold text-white hover:text-chill">
+            Yasir
+          </a>
+        </p>
       </div>
     </footer>
   );

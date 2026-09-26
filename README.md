@@ -27,23 +27,33 @@ booking button needs no server and keeps working.
 
 ## Images and sources
 No image published by the business itself could be retrieved:
-- The Google Maps photos, video thumbnails and promo banner load through JavaScript and could not be collected.
-- The archived site (web.archive.org, snapshot 2025-10-08) contained only stock and template images. They were rejected:
-  three stock testimonial headshots, and a hero photo carrying another site's "Best Calgary" watermark. The logo was not archived.
+- The Google Maps photos and promo banner load through JavaScript and could not be collected.
+- The archived site (web.archive.org, snapshot 2025-10-08) had only stock and template images. They were rejected
+  (stock headshots, and a photo with another site's "Best Calgary" watermark). The logo was not archived.
 - No social media profile for this number was found.
 
-Every photo slot therefore renders a clearly labelled `Placeholder` component (`components/ui/Placeholder.tsx`).
-`/public/images/` is empty. Put real photos there and swap each `Placeholder` for `next/image`.
+**Current photos are free-licence stock images from Wikimedia Commons, not this business's own work.**
+They are generic AC/HVAC work shots (several show U.S. Air Force technicians). Replace them with the client's
+real job photos before launch; keep the same file names in `/public/images/` and nothing else needs to change.
+All photos are public domain, so no on-site credit is required.
+
+| File | Author | Licence | Source |
+|---|---|---|---|
+| `technician-checking-ac-pressure.jpg` | U.S. Air Force AFCENT by Airman 1st Class Derrick Bole | Public domain | https://commons.wikimedia.org/wiki/File:379th_ECES_HVAC_technicians_combat_rising_temperatures_(8502257).jpg |
+| `gas-pressure-gauges-refill.jpg` | U.S. Air Force AFCENT by Airman 1st Class Derrick Bole | Public domain | https://commons.wikimedia.org/wiki/File:379th_ECES_HVAC_technicians_combat_rising_temperatures_(8502255).jpg |
+| `technician-repairing-ac-unit.jpg` | U.S. Air Force photo by Airman 1st Class Skylar Ellis | Public domain | https://commons.wikimedia.org/wiki/File:HVAC_Technicians_Power_Mission_Success_(8850029).jpg |
+| `condenser-coil-cleaning.jpg` | TSgt Joselito Aribuabo | Public domain | https://commons.wikimedia.org/wiki/File:U.S._Air_Force_Senior_Airman_Jacob_Lagodzinski,_a_heating,_ventilation_and_air_conditioning_technician_with_the_379th_Expeditionary_Civil_Engineer_Squadron,_uses_a_high_pressure_water_spray_to_clean_an_air_131022-F-EI671-006.jpg |
+| `duct-insulation-work.jpg` | Senior Airman Brigitte Brantley | Public domain | https://commons.wikimedia.org/wiki/File:New_air_conditioner_120730-F-GO396-668.jpg |
+| `outdoor-split-unit-installation.jpg` | U.S. Air Force | Public domain | https://commons.wikimedia.org/wiki/File:379_ELRS_vehicle_maintenance_introduces_innovative_nitrogen_gas_testing_method_for_air_conditioning_systems_(9469863).jpg |
+| `rooftop-ac-units-maintenance.jpg` | P199 | Public domain | https://commons.wikimedia.org/wiki/File:Rooftop_Packaged_Units.JPG |
+| `technician-inside-ac-unit.jpg` | Senior Airman Brigitte Brantley | Public domain | https://commons.wikimedia.org/wiki/File:New_air_conditioner_120730-F-GO396-660.jpg |
 
 ## Still placeholder / needs client material
 | Item | Where |
 |---|---|
 | Registered company name | `lib/site-config.ts` → `name`, `components/brand/Logo.tsx` |
 | Logo (current one is a designed SVG, no original found) | `components/brand/` |
-| Hero photo: technician repairing a split unit | `app/page.tsx` hero |
-| "Why choose us" photo | `app/page.tsx` |
-| Work gallery: 4 photos (before/after if available) | `app/page.tsx` gallery |
-| One photo per service (6) | `app/services/page.tsx` |
+| All 8 photos are stock (see above). Replace with real job photos, before/after if available | `public/images/` |
 | Google review text (3 reviews, shown only with the client's permission) | `components/sections/RatingBlock.tsx` currently shows the rating only |
 | Confirm rating 4.8 / 50 reviews, 24h hours and address from the live Google profile | `lib/site-config.ts` |
 | Public email address | `lib/site-config.ts` → `email` (mailto hidden while `null`) |
